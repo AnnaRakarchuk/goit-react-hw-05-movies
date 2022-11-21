@@ -1,0 +1,14 @@
+.List_trending {
+  margin: 15px 0;
+}
+.Item_trending:not(:last-child) {
+  margin-bottom: 5px;
+}
+.Link_trending {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+.Link_trending:hover {
+  color: #ab47bc;
+}
