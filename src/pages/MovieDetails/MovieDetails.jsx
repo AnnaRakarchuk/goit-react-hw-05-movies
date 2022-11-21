@@ -4,8 +4,9 @@ import { useEffect, useState, Suspense } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import css from './MovieDetails.module.css';
+import blankImage from '../../images/no-image_mobile.jpg';
 
-const baseUrl = 'https://image.tmdb.org/t/p/w500/';
+const IMAGEURL = 'https://image.tmdb.org/t/p/w500/';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
@@ -25,6 +26,13 @@ export const MovieDetails = () => {
     return;
   }
 
+  const { genres, release_date, vote_average, poster_path } =
+  movie;
+const imageSRC = poster_path ? IMAGEURL + poster_path : blankImage;
+const userScore = Math.round((Number(vote_average) * 100) / 10);
+const movieGenres = genres.map(genre => genre.name).join(' ');
+const releaseDate = release_date.slice(0, 4);
+
   return (
     <>
       <button className={css.Go_back} type="button" onClick={handleGoBack}>
@@ -34,14 +42,17 @@ export const MovieDetails = () => {
         <div>
           <img
             className={css.Movie_image}
-            src={`${baseUrl + movie.poster_path}`}
+            src={`${imageSRC}`}
             alt={movie.title}
           />
         </div>
         <div>
-          <h2 className={css.Title}>{movie.title} </h2>
+          <h2 className={css.Title}>{movie.title} {releaseDate && `(${releaseDate})`} </h2>
+          <p>{userScore > 0 && <p>User Score: {userScore}%</p>}</p>
           <b>Overview</b>
           <p className={css.Overview}> {movie.overview}</p>
+          <b>Genres</b>
+          <p className={css.Genre}>{movieGenres || ' - '}</p>
         </div>
       </div>
       <section className={css.Add_section}>

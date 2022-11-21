@@ -22,6 +22,7 @@
   flex-direction: row;
   gap: 15px;
   padding: 10px 0 10px 10px;
+  box-shadow: rgb(0 0 0 / 14%) 0px 1px 1px 2px;
 }
 .Movie_image {
   width: 270px;
@@ -29,7 +30,7 @@
 .Title {
   margin-bottom: 10px;
 }
-.Overview {
+.Overview, .Genre {
   margin-top: 0;
   width: 500px;
   text-align: justify;
