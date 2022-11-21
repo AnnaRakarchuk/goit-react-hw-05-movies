@@ -1,0 +1,50 @@
+.Go_back {
+  border-radius: 6px;
+  padding: 7px 10px;
+  border: transparent;
+  outline: none;
+  margin-left: 10px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #ab47bc;
+  color: white;
+  text-decoration: none;
+}
+.Go_back:hover {
+  background-color: #773183;
+}
+.Movie_card {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 10px 0 10px 10px;
+}
+.Movie_image {
+  width: 270px;
+}
+.Title {
+  margin-bottom: 10px;
+}
+.Overview {
+  margin-top: 0;
+  width: 500px;
+  text-align: justify;
+}
+.Add_section {
+  padding: 10px;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+}
+.Add_title {
+  margin-top: 0;
+}
+.Info_link {
+  color: black;
+  font-weight: 500;
+}
+.Info_link:hover {
+  color: #ab47bc;
+}

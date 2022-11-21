@@ -21,7 +21,7 @@ export const Navigation = () => {
         aria-label="secondary tabs example"
       >
         <Tab value="one" label="Home" component={NavLink} to='/' />
-        <Tab value="two" label="Movies" component={NavLink} to='/' />
+        <Tab value="two" label="Movies" component={NavLink} to='/movies' />
       </Tabs>
     </Box>
   );

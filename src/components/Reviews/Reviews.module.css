@@ -1,0 +1,16 @@
+.Section {
+  padding: 15px 10px;
+}
+
+.Container {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.Information {
+  text-align: justify;
+  list-style: none;
+}
+.Information:not(:last-child) {
+  margin-bottom: 15px;
+}

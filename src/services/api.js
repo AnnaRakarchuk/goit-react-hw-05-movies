@@ -9,7 +9,7 @@ export const getTrendingMovies = async () => {
   return data.results;
 };
 
-// // movie details request
+// movie details request
 
 export const getMovieById = async movieId => {
   const res = await axios
@@ -20,28 +20,27 @@ export const getMovieById = async movieId => {
   return res.data;
 };
 
-// //cast info request
+ //cast info request
 
-// export const getCredits = async movieId => {
-//   const { data } = await axios.get(
-//     `/movie/${movieId}/credits?api_key=${KEY}&language=en-US`
-//   );
-
-//   return data.cast;
-// };
+export const getActors = async movieId => {
+  const res = await axios.get(
+    `/movie/${movieId}/credits?api_key=${KEY}&language=en-US`
+  );
+  return res.data.cast;
+};
 
 // //reviews request
 
-// export const getReviews = async movieId => {
-//   const { data } = await axios.get(`/movie/${movieId}/reviews?api_key=${KEY}`);
-//   return data.results;
-// };
+export const getReviews = async movieId => {
+  const { data } = await axios.get(`/movie/${movieId}/reviews?api_key=${KEY}`);
+  return data.results;
+};
 
-// // search movies request
+ // search movies request
 
-// export const getMoviesByName = async query => {
-//   const { data } = await axios.get(
-//     `/search/movie?api_key=${KEY}&query=${query}&language=en-US&page=1&include_adult=false`
-//   );
-//   return data;
-// };
+export const getMoviesByQuery = async query => {
+  const res = await axios.get(
+    `/search/movie?api_key=${KEY}&query=${query}&language=en-US&page=1&include_adult=false`
+  );
+  return res.data.results;
+};
