@@ -14,7 +14,7 @@ export const Movies = () => {
   };
 
   const handleSubmit = e => {
-    e.prevetDefault();
+    e.preventDefault();
     setSearchParams({ query });
   };
 
