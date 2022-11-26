@@ -8,7 +8,7 @@ import blankImage from '../../images/no-image_mobile.jpg';
 
 const IMAGEURL = 'https://image.tmdb.org/t/p/w500/';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ const releaseDate = release_date.slice(0, 4);
         </div>
         <div>
           <h2 className={css.Title}>{movie.title} {releaseDate && `(${releaseDate})`} </h2>
-          <p>{userScore > 0 && <p>User Score: {userScore}%</p>}</p>
+          <p>{userScore > 0 && <span>User Score: {userScore}%</span>}</p>
           <b>Overview</b>
           <p className={css.Overview}> {movie.overview}</p>
           <b>Genres</b>
@@ -77,3 +77,5 @@ const releaseDate = release_date.slice(0, 4);
     </>
   );
 };
+
+export default MovieDetails;

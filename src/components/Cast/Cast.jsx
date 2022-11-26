@@ -7,7 +7,7 @@ import css from './Cast.module.css';
 
 const IMAGEURL = 'https://image.tmdb.org/t/p/w500';
 
-export const Cast = () => {
+ const Cast = () => {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
@@ -70,3 +70,5 @@ export const Cast = () => {
     </section>
   );
 };
+
+export default Cast;

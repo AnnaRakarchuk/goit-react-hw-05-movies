@@ -4,7 +4,7 @@ import { getMoviesByQuery } from 'services/api';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import css from './Movies.module.css';
 
-export const Movies = () => {
+ const Movies = () => {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -45,3 +45,5 @@ export const Movies = () => {
     </div>
   );
 };
+
+export default Movies;

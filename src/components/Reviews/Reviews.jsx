@@ -4,7 +4,7 @@ import {getReviews} from 'services/api';
 import css from './Reviews.module.css'
 
 
-export const Reviews = () =>{
+ const Reviews = () =>{
     const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
@@ -33,7 +33,7 @@ export const Reviews = () =>{
         <>
           {reviews.length > 0 &&
             reviews.map(({ id, author, content }) => (
-              <div className={css.Container}>
+              <div key={id} className={css.Container}>
                 <li key={id} className={css.Information}>
                   <p>
                     <b>Author: {author}</b>
@@ -48,3 +48,5 @@ export const Reviews = () =>{
     </section>
     )
 }
+
+export default Reviews;

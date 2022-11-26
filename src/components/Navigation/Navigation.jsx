@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { useState } from 'react';
 import { NavLink } from "react-router-dom";
 
-export const Navigation = () => {
+ const Navigation = () => {
   const [value, setValue] = useState('one');
 
   const handleChange = (event, newValue) => {
@@ -26,3 +26,5 @@ export const Navigation = () => {
     </Box>
   );
 }
+
+export default Navigation;
